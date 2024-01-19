@@ -168,7 +168,7 @@ int main(void)
 #undef  printf
 #define printf(...) do { } while(0)
 
-#elif !defined(BROWSER_TESTS)
+#elif defined(NO_BROWSER_TESTS)
 
 static FILE *fp_res;
 

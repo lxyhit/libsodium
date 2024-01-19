@@ -138,7 +138,7 @@ sodium_crit_leave(void)
     return pthread_mutex_unlock(&_sodium_lock);
 }
 
-#elif defined(HAVE_ATOMIC_OPS) && !defined(__EMSCRIPTEN__)
+#elif defined(HAVE_ATOMIC_OPS) && !defined(__EMSCRIPTEN__) && !defined(__wasi__)
 
 static volatile int _sodium_lock;
 
