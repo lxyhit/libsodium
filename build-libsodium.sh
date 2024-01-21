@@ -1,10 +1,11 @@
 #!/bin/bash
+wasi_sdk_folder=/home/noname/Desktop/wasm/wasi-sdk-new/wasi-sdk/build/install/opt/wasi-sdk
 
-export CC=/home/noname/Desktop/wasm/wasi-sdk-new/wasi-sdk-21.0/bin/clang
+export CC=$wasi_sdk_folder/bin/clang
+export AR=$wasi_sdk_folder/bin/llvm-ar
+export NM=$wasi_sdk_folder/bin/llvm-nm
+export RANLIB=$wasi_sdk_folder/bin/llvm-ranlib
 export CFLAGS="-Os -g"
-export AR=/home/noname/Desktop/wasm/wasi-sdk-new/wasi-sdk-21.0/bin/llvm-ar
-export NM=/home/noname/Desktop/wasm/wasi-sdk-new/wasi-sdk-21.0/bin/llvm-nm
-export RANLIB=/home/noname/Desktop/wasm/wasi-sdk-new/wasi-sdk-21.0/bin/llvm-ranlib
 
 ./configure --prefix=$PWD/libsodium-wasm32-wasi --host=wasm32-wasi --disable-ssp --without-pthreads --disable-shared
 
