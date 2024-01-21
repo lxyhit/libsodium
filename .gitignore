@@ -64,6 +64,9 @@ libsodium-win64
 libsodium.pc
 libtool
 ltmain.sh
+libsodium-wasm32-wasi/*
+libsodium-test-dynamic
+libsodium-test
 m4/argz.m4
 m4/libtool.m4
 m4/ltoptions.m4
