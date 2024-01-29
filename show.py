@@ -1,12 +1,16 @@
 import os
 from openpyxl import Workbook
 
+file_extension = ".so"
+
 def get_file_sizes(folder_path):
     file_sizes = {}
     for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
         if os.path.isfile(file_path):
-            file_sizes[filename] = os.path.getsize(file_path)
+            name, extension = os.path.splitext(filename)
+            if extension == file_extension:
+                file_sizes[filename] = os.path.getsize(file_path)
     return file_sizes
 
 def write_to_excel(folder1, folder2, output_excel):

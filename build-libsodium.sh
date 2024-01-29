@@ -5,7 +5,7 @@ export CC=$wasi_sdk_folder/bin/clang
 export AR=$wasi_sdk_folder/bin/llvm-ar
 export NM=$wasi_sdk_folder/bin/llvm-nm
 export RANLIB=$wasi_sdk_folder/bin/llvm-ranlib
-export CFLAGS="-Os -g"
+export CFLAGS="-Os -g0"
 
 ./configure --prefix=$PWD/libsodium-wasm32-wasi --host=wasm32-wasi --disable-ssp --without-pthreads --disable-shared
 
